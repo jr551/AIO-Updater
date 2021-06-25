@@ -12,7 +12,7 @@ set serverport=28015
 :: RCON IP
 set rconip=0.0.0.0
 
-:: RCOM PORT
+:: RCON PORT
 set rconport=0.0.0.0
 
 :: RCON Password
@@ -73,11 +73,10 @@ start /AFFINITY %affinity% RustDedicated.exe -batchmode -nographics ^
 +app.port %appport% ^
 +query.port %queryport% ^
 +server.identity "%serveridentity%" ^
-+server.levelurl "%serverlevelurl%" ^
-+server.level "%serverlevel%"
-+server.worldsize "%serverworldsize%"
-+server.seed "%serverseed%"
-+server.maxplayers %servermaxplayers%
--LogFile "%path%%fileName%"
++server.level "%serverlevel%" ^
++server.worldsize "%serverworldsize%" ^
++server.seed "%serverseed%" ^
++server.maxplayers %servermaxplayers% ^
+-LogFile "%path%%fileName%" ^
 
 exit
