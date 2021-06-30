@@ -71,4 +71,5 @@ start /AFFINITY %affinity% RustDedicated.exe -batchmode -nographics ^
 +server.maxplayers %servermaxplayers% ^
 -LogFile "%path%%fileName%" ^
 
+
 exit
