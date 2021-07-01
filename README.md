@@ -9,6 +9,14 @@ A start bat to auto update uMod and RustDedicated. also will restart RustDedicat
 3. Edit the fields within the "AIO_Config.bat"
 4. launch "AIO_Updater.bat"
 
+### Running More Than One Server
+
+- To run a second server create a new folder in C:\ and give it a name.
+- You will need to edit both "AIO_Updater.bat" and "AIO_Config.bat"
+- Find all lines that contain C:\Rust\xxxxx\xxxxx and replace "Rust" with the name of the folder you created earlier and save.
+- Drop The AIO_Updater folder also in that new folder then open "AIO_Updater.bat"
+- This guide could be used if you dont want the folder to be called "Rust"
+
 ### Tips
 
 - Don't close any windows!! As one is the Rust Rcon and the other is checking if RustDedicated is still running, so if RustDedicated closes it will automatically start it back up. 
