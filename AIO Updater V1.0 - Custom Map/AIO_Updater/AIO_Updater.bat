@@ -7,6 +7,7 @@ set SteamCMD=C:\Rust\AIO_Updater\steamcmd
 set Curl=C:\Rust\AIO_Updater\curl
 set AIO=C:\Rust\AIO_Updater
 set PROCESSNAME=RustDedicated.exe
+set StartDelay=5
 
 ECHO *************************
 ECHO ** UPDATING OXIDE/RUST **
@@ -34,7 +35,11 @@ echo.
 .\7za\7za.exe x -spe "C:\Rust\Oxide.Rust.zip" -o"C:\Rust" -aoa
 echo.
 echo.
-timeout 5 >nul
+
+echo Waiting %StartDelay% Seconds Before Starting Server
+timeout %StartDelay% >nul
+echo.
+echo.
 
 ECHO *********************
 ECHO ** STARTING SERVER **
