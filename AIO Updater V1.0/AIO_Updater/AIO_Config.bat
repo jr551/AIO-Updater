@@ -15,6 +15,15 @@ set rconpassword=CHANGEME!!
 :: Name Of Folder In C:\Rust\server
 set serveridentity=Identity
 
+:: Customise the server listing and appearance
+
+set serverhostname="Hostname"
+set serverdescription=""
+set serverurl="http://.."
+set serverheaderimage="http://.."
+set serverlogoimage="http://.."
+set server_tags="monthly,pve"
+
 :: Server Level
 set serverlevel=Procedural Map
 
@@ -55,11 +64,18 @@ start RustDedicated.exe -batchmode -nographics ^
 +rcon.password "%rconpassword%" ^
 +app.port %appport% ^
 +query.port %queryport% ^
++rcon.web 1 ^
 +server.identity "%serveridentity%" ^
 +server.level "%serverlevel%" ^
 +server.worldsize "%serverworldsize%" ^
 +server.seed "%serverseed%" ^
 +server.maxplayers %servermaxplayers% ^
++server.hostname=%serverhostname% ^
++server.description=%serverdescription% ^
++server.url=%serverurl% ^
++server.headerimage=%serverheaderimage% ^
++server.logoimage=%serverlogoimage% ^
++server.tags=%server_tags% ^
 -LogFile "%logpath%%fileName%" 
 
 exit
