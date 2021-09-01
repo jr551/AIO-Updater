@@ -60,6 +60,6 @@ start RustDedicated.exe -batchmode -nographics ^
 +server.worldsize "%serverworldsize%" ^
 +server.seed "%serverseed%" ^
 +server.maxplayers %servermaxplayers% ^
--LogFile "%logpath%%fileName%" ^
+-LogFile "%logpath%%fileName%" 
 
 exit
