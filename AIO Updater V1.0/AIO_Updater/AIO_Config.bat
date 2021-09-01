@@ -2,27 +2,15 @@
 :: #####################
 :: ## Configure Below ##
 :: #####################
- 
-:: Server IP
-set serverip=0.0.0.0
 
-:: Server Port
+:: Server Ports (Server, Rust+ App, Query and RCON)
 set serverport=28015
-
-:: RCON IP
-set rconip=0.0.0.0
-
-:: RCON PORT
-set rconport=0.0.0.0
+set appport=28083
+set queryport=28017
+set rconport=28018
 
 :: RCON Password
 set rconpassword=CHANGEME!!
-
-:: Rust+ app Port
-set appport=28083
-
-:: Query Port
-set queryport=28017
 
 :: Name Of Folder In C:\Rust\server
 set serveridentity=Identity
@@ -39,17 +27,14 @@ set serverseed=289704872
 :: Max Player Count
 set servermaxplayers=50
 
-:: Affinity
-set affinity=0x000000000000001E
-
 :: ##########################
 :: ## End Of Configuration ##
 :: ##########################
 
 echo Setting Server Variables...
 
-set ServerDirectory=C:\Rust\
-set Bat_Start=C:\Rust\Start_Server_Bat
+:: Change to C:\rust if this is not the same folder
+set ServerDirectory=%~dp0
 
 cd "%ServerDirectory%"
 
@@ -60,14 +45,12 @@ GOTO :server_start
 for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
 set "YY=%dt:~2,2%" & set "YYYY=%dt:~0,4%" & set "MM=%dt:~4,2%" & set "DD=%dt:~6,2%"
 set "HH=%dt:~8,2%" & set "Min=%dt:~10,2%" & set "Sec=%dt:~12,2%"
-set path=.\server\rsm\logs\%YYYY%-%MM%-%DD%\
-if not exist %path% mkdir %path%
+set logpath=.\server\rsm\logs\%YYYY%-%MM%-%DD%\
+if not exist %logpath% mkdir %logpath%
 set fileName=%HH%-%Min%-%Sec%.txt
  
-start /AFFINITY %affinity% RustDedicated.exe -batchmode -nographics ^
-+server.ip %serverip% ^
+start RustDedicated.exe -batchmode -nographics ^
 +server.port %serverport% ^
-+rcon.ip %rconip% ^
 +rcon.port %rconport% ^
 +rcon.password "%rconpassword%" ^
 +app.port %appport% ^
@@ -77,6 +60,6 @@ start /AFFINITY %affinity% RustDedicated.exe -batchmode -nographics ^
 +server.worldsize "%serverworldsize%" ^
 +server.seed "%serverseed%" ^
 +server.maxplayers %servermaxplayers% ^
--LogFile "%path%%fileName%" ^
+-LogFile "%logpath%%fileName%" ^
 
 exit

@@ -2,10 +2,11 @@
 
 @echo off
 
-set ServerDirectory=C:\Rust
-set SteamCMD=C:\Rust\AIO_Updater\steamcmd
-set Curl=C:\Rust\AIO_Updater\curl
-set AIO=C:\Rust\AIO_Updater
+:: Change to C:\rust if this is not the same folder
+set ServerDirectory=%~dp0
+set SteamCMD=%~dp0\steamcmd
+set Curl=%~dp0\curl
+set AIO=%~dp0
 set PROCESSNAME=RustDedicated.exe
 set StartDelay=5
 
@@ -32,7 +33,7 @@ echo.
 echo Extracting Oxide...
 echo.
 echo.
-.\7za\7za.exe x -spe "C:\Rust\Oxide.Rust.zip" -o"C:\Rust" -aoa
+.\7za\7za.exe x -spe "%ServerDirectory%\Oxide.Rust.zip" -o"%ServerDirectory%" -aoa
 echo.
 echo.
 
