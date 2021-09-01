@@ -17,7 +17,7 @@ echo.
 echo Checking For Rust Update...
 echo.
 echo.
-%SteamCMD%\steamcmd.exe +login anonymous +force_install_dir %ServerDirectory% +app_update 258550 validate﻿ +quit
+%SteamCMD%\steamcmd.exe +login anonymous +force_install_dir %ServerDirectory% +app_update 258550 +quit
 
 timeout 5 >nul
 echo.
