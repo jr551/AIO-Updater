@@ -72,7 +72,7 @@ ECHO *********************
 
 cd %ServerDirectory%
 
-start /WAIT RustDedicated.exe -batchmode -nographics ^
+RustDedicated.exe -batchmode ^
 +server.port %serverport% ^
 +rcon.port %rconport% ^
 +rcon.password "%rconpassword%" ^
