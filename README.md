@@ -1,4 +1,5 @@
-# AIO-Updater
+# AIO-Updater - Forked version with various changes (Jr551 fork)
+
 A start bat to auto update uMod and RustDedicated. also will restart RustDedicated if it closes
 
 
@@ -23,4 +24,3 @@ A start bat to auto update uMod and RustDedicated. also will restart RustDedicat
 - Don't close any windows!! As one is the Rust Rcon and the other is checking if RustDedicated is still running, so if RustDedicated closes it will automatically start it back up. 
 - If you are wanting to use a Custom Map please use the "AIO Updater V1.0 - Custom Map".
 - All others (Barren,Hapis, Procedural, etc) can use the other folder, just change "set serverlevel=Procedural Map" To the appropriate map.
-- server.hostname, server.description, server.headerimage, server.logoimage, server.url and any other that are not in the "AIO_Config.bat" are configured in "C:\Rust\server\YourServerIdentity\cfg\server.cfg".
